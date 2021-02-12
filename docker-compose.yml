@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sample-gatsbyjs-node
+    command: gatsby develop --host 0.0.0.0
+    ports:
+      - 8000:8000
+    volumes:
+      - type: bind
+        source: .
+        target: /sample-gatsbyjs
+    tty: true
+    stdin_open: true
