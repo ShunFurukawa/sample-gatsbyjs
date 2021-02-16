@@ -1,6 +1,7 @@
 ---
 date: "2021-02-16"
 title: "markdown sample"
+thumb: "./images/gatsby.jpg"
 tags:
   - hoge
   - sample
