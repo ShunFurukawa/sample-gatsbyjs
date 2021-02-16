@@ -4,7 +4,20 @@ WORKDIR /sample-gatsbyjs
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git
+    apk add --no-cache git \
+        autoconf \
+        automake \
+        file \
+        gcc \
+        libtool \
+        make \
+        musl-dev \
+        tiff \
+        jpeg \
+        nasm \
+        pkgconf \
+        zlib \
+        zlib-dev
 
 RUN npm install -g gatsby-cli
 
