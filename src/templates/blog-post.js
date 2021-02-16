@@ -1,33 +1,25 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
+import React from "react"
+import { graphql } from 'gatsby'
+import Layout from "../components/layout"
 
-export default function Template ({ data }) {
-  const { markdownRemark: post } = data
+export default function BlogPost({ data }) {
+  const post = data.markdownRemark
 
   return (
-    <div className="blog-post-container">
-      <Helmet title={ `blog name | ${post.frontmatter.title}` } />
-      <div className="blog-post">
-        <h1>{ post.frontmatter.title }</h1>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
-    </div>
+    <Layout>
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    </Layout>
   )
 }
 
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
       }
+      html
     }
   }
 `
