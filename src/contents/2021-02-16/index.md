@@ -25,6 +25,9 @@ ___
 ***
 
 
+```toc
+```
+
 ## Typographic replacements
 
 Enable typographer option to see result.

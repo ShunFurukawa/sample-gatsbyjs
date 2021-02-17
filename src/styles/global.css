@@ -1,3 +1,11 @@
 html {
   background-color: lavenderblush;
 }
+
+.gatsby-image-wrapper {
+  width: 100%;
+}
+
+.table-of-contents {
+  background-color: #FFF;
+}
